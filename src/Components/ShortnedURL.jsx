@@ -13,7 +13,7 @@ const ShortnedURL = ({ orignialUrl, shortURL }) => {
 
   const copyData = () => {
     navigator.clipboard
-      .writeText(`shorty.onrender.app/${shortURL}`)
+      .writeText(`chuxdennis-shorty.vercel.app/r/lb${shortURL}`)
       .then(() => {
         setPopupOpen(true);
       })
@@ -28,7 +28,7 @@ const ShortnedURL = ({ orignialUrl, shortURL }) => {
         <p className="xs:text-[12px] md:text-[1rem] ">
           <a className="text-blue-700 underline" href={shortURL}>
             {" "}
-            chuxdennis-shorty.vercel.app/r/{shortURL}
+            https://chuxdennis-shorty.vercel.app/r/{shortURL}
           </a>
         </p>
         <svg

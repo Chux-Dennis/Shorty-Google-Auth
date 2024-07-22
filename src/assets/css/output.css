@@ -574,6 +574,10 @@ video {
   left: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .right-\[15px\] {
   right: 15px;
 }
@@ -681,10 +685,6 @@ video {
 
 .h-\[150px\] {
   height: 150px;
-}
-
-.h-\[650px\] {
-  height: 650px;
 }
 
 .h-screen {
@@ -950,22 +950,6 @@ video {
   font-size: 28px;
 }
 
-.text-\[8rem\] {
-  font-size: 8rem;
-}
-
-.text-\[10rem\] {
-  font-size: 10rem;
-}
-
-.text-\[16rem\] {
-  font-size: 16rem;
-}
-
-.text-\[20rem\] {
-  font-size: 20rem;
-}
-
 .font-black {
   font-weight: 900;
 }
@@ -1175,10 +1159,6 @@ video {
 
   .xs\:text-\[2rem\] {
     font-size: 2rem;
-  }
-
-  .xs\:text-\[4rem\] {
-    font-size: 4rem;
   }
 
   .xs\:text-\[5rem\] {

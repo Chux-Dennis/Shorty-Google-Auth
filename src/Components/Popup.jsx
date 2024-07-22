@@ -9,10 +9,10 @@ const Popup = ({ onClose, booleanVal }) => {
 
   return (
     <div
-      className="bg-[rgb(0,0,0,.7)] flex justify-center items-baseline z-[100] h-screen top-0 left-0 w-full"
+      className="bg-[rgb(0,0,0,.7)] flex justify-center items-baseline z-[100] h-screen top-0 bottom-0 right-0 left-0 w-full"
       style={{ position: booleanVal ? "fixed" : "hidden" }}
     >
-      <div className="popup-wrapper relative rounded-[15px] bg-white z-10 p-8 w-[650px] h-[650px]">
+      <div className="popup-wrapper relative rounded-[15px] bg-white z-10 p-8 w-[650px] h-screen">
         <div
           className="close-button absolute top-[15px] right-[15px] cursor-pointer "
           onClick={onClose}

@@ -1,7 +1,12 @@
 import React from "react";
 import { dateRefractor } from "../../lib/dateRefractor";
+const insertLineBreaks = (text, maxLength) => {
+  const regex = new RegExp(`.{1,${maxLength}}`, "g");
+  return text.match(regex).join("\n");
+};
 
 const LinkBox = ({ longURL, shortURL, date }) => {
+  const formattedText = insertLineBreaks(longURL, 15);
   return (
     <div className="border-2 border-blue-400 p-4 rounded-[20px] mb-6">
       <div className="flex justify-between xs:items-center xs:flex-col-reverse sm:flex-row">
@@ -19,10 +24,10 @@ const LinkBox = ({ longURL, shortURL, date }) => {
           </span>
           <div className="xs:mt-4 lg:mt-0">
             <h2 className="cursor-pointer xs:text-center md:text-left hover:underline text-[1.5rem] font-Grayfel text-blue-500">
-              {longURL}
+              {formattedText}
             </h2>
             <p className="text-white xs:text-center sm:text-left text-[13px] my-2 font-Outfit">
-              {`chuxdennis-shorty.vercel.app/${shortURL}`}
+              {`https://chuxdennis-shorty.vercel.app/r/${shortURL}`}
             </p>
             <p className="opacity-45 xs:text-center sm:text-left text-[10px] font-Radio text-white">
               {dateRefractor(date.toDate())}

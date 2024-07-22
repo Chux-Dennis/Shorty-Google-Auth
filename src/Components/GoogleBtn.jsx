@@ -39,7 +39,7 @@ const GoogleBtn = ({ signUpEnabled }) => {
   const signUpFunc = function () {
     signInWithPopup(auth, provider).then((data) => {
       setData(data.user.displayName, data.user.email, data.user.uid);
-      console.log(data.user);
+
       const userDetails = {
         name: data._tokenResponse.firstName,
         email: data._tokenResponse.email,
