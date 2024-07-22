@@ -9,7 +9,7 @@ import Dash from "../pages/Dash";
 
 const GoogleBtn = ({ signUpEnabled }) => {
   const [failedLogin, setFailedLogin] = useState("");
-  localStorage.clear();
+
   const navigate = useNavigate();
 
   const logInFunc = function () {
