@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { dateRefractor } from "../../lib/dateRefractor";
 const insertLineBreaks = (text, maxLength) => {
   const regex = new RegExp(`.{1,${maxLength}}`, "g");
@@ -6,7 +7,25 @@ const insertLineBreaks = (text, maxLength) => {
 };
 
 const LinkBox = ({ longURL, shortURL, date }) => {
-  const formattedText = insertLineBreaks(longURL, 15);
+  const [formattedText, setFormattedText] = useState(longURL);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 620) {
+        // Mobile devices
+        setFormattedText(insertLineBreaks(longURL, 15));
+      } else {
+        setFormattedText(longURL);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [longURL]);
   return (
     <div className="border-2 border-blue-400 p-4 rounded-[20px] mb-6">
       <div className="flex justify-between xs:items-center xs:flex-col-reverse sm:flex-row">
